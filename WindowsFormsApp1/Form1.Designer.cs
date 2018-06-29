@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.savePngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,22 +42,23 @@
             this.altitudeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chart1.Legends.Add(legend14);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(148, 47);
             this.chart1.Name = "chart1";
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chart1.Series.Add(series14);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(590, 375);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -77,19 +77,12 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
             this.saveCsvToolStripMenuItem,
-            this.savePngToolStripMenuItem});
+            this.savePngToolStripMenuItem,
+            this.openToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click_1);
             // 
             // saveCsvToolStripMenuItem
             // 
@@ -118,27 +111,34 @@
             // velocityToolStripMenuItem
             // 
             this.velocityToolStripMenuItem.Name = "velocityToolStripMenuItem";
-            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.velocityToolStripMenuItem.Text = "Velocity";
             this.velocityToolStripMenuItem.Click += new System.EventHandler(this.velocityToolStripMenuItem_Click);
             // 
             // accelerationToolStripMenuItem
             // 
             this.accelerationToolStripMenuItem.Name = "accelerationToolStripMenuItem";
-            this.accelerationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accelerationToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.accelerationToolStripMenuItem.Text = "Acceleration";
             this.accelerationToolStripMenuItem.Click += new System.EventHandler(this.accelerationToolStripMenuItem_Click);
             // 
             // altitudeToolStripMenuItem
             // 
             this.altitudeToolStripMenuItem.Name = "altitudeToolStripMenuItem";
-            this.altitudeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altitudeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.altitudeToolStripMenuItem.Text = "Altitude";
             this.altitudeToolStripMenuItem.Click += new System.EventHandler(this.altitudeToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click_1);
             // 
             // Form1
             // 
@@ -165,13 +165,13 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCsvToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem savePngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem graphsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem velocityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accelerationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altitudeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
     }
 }
 

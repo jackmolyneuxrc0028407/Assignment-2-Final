@@ -51,46 +51,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // This subroutine allows the user to open files if they are in the correct format
-            openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "CSV Files|*.csv";
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
-                    {
-                        string line = sr.ReadLine();
-                        while (!sr.EndOfStream)
-                        {
-                            table.Add(new row());
-                            string[] l = sr.ReadLine().Split(',');
-                            table.Last().time = double.Parse(l[0]);
-                            table.Last().altitude = double.Parse(l[1]);
-
-                        }
-                        calculateVelocity();
-                        calculateAcceleration();
-                    }
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(openFileDialog1.FileName + " failed to open.");
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format.");
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format");
-                }
-            }
-        }
-
+        
         private void saveCsvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // This subroutine allows the user to save the file as a CSV file
@@ -206,6 +167,46 @@ namespace WindowsFormsApp1
             chart1.ChartAreas[0].AxisX.Title = "time (s)";
             chart1.ChartAreas[0].AxisY.Title = "altitude (m)";
             chart1.ChartAreas[0].RecalculateAxesScale();
+        }
+
+        private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            // This subroutine allows the user to open files if they are in the correct format
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "CSV Files|*.csv";
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                    {
+                        string line = sr.ReadLine();
+                        while (!sr.EndOfStream)
+                        {
+                            table.Add(new row());
+                            string[] l = sr.ReadLine().Split(',');
+                            table.Last().time = double.Parse(l[0]);
+                            table.Last().altitude = double.Parse(l[1]);
+
+                        }
+                        calculateVelocity();
+                        calculateAcceleration();
+                    }
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " failed to open.");
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format.");
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format");
+                }
+            }
         }
     }
 }
